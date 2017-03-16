@@ -19,12 +19,6 @@
     group: root
   become: true
 
-- name: get dkms
-  apt:
-    name: dkms
-    state: present
-  become: true
-
 - name: run driver
   command: ./usr/local/bin/displayLinkDriver.run
   become: true
