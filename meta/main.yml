@@ -5,6 +5,7 @@ dependencies:
 galaxy_info:
   author: Pi Unnerup
   description: displayLinkDriver Install
+  license: MIT
   min_ansible_version: 2.2.1.0
   platforms:
   - name: Centos
