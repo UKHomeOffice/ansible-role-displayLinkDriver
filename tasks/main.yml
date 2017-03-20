@@ -1,25 +1,30 @@
 ---
 - name: Fetch driverLinkDisplay
-  get_url: 
+  get_url:
     url: "{{ driver_download_url }}"
-    checksum: ""
-    dest: /usr/local/bin/displayLinkDriver.zip    
-  become: true 
-   
-#- name: unzip driver
-#  unarchive: 
-#    src: /usr/local/bin/displayLinkDriver.zip
-#    dest: /usr/local/bin/displayLinkDriver.run
-#  become: true
+    dest: /usr/local/bin/displayLinkDriver.zip
+  become: true
 
-#- name: set priviledges
-#  file: 
-#    src: /usr/local/bin/displayLinkDriver.run
-#    mode: 0755
-#    owner: root
-#    group: root
-#  become: true
+- name: unzip driver
+  unarchive:
+    src: /usr/local/bin/displayLinkDriver.zip
+    dest: /usr/local/bin/
+  become: true
 
-#- name: run driver
-#  command: ./usr/local/bin/displayLinkDriver.run
-#  become: true
+- name: set priviledges
+  file:
+    path: "/usr/local/bin/displaylink-driver-{{ version }}.run"
+    mode: 0755
+    owner: root
+    group: root
+  become: true
+
+- name: run driver
+  command: /usr/local/bin/displaylink-driver-{{ version }}.run --keep --noexec
+  become: true
+
+- name: start upon boot
+  service:
+    name: dlm.service
+    enabled: yes
+    state: started
