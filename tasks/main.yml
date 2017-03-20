@@ -2,6 +2,7 @@
 - name: Fetch driverLinkDisplay
   get_url: 
     url: "{{ driver_download_url }}"
+    checksum: ""
     dest: /usr/local/bin/displayLinkDriver.zip    
   become: true 
    
