@@ -24,7 +24,7 @@
   become: true
 
 - name: start upon boot
-  service:
+  systemd:
     name: dlm.service
     enabled: yes
     state: started
