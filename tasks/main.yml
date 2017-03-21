@@ -24,7 +24,8 @@
   become: true
 
 - name: run install script
-  command "/usr/local/bin/displaylink-driver-{{ version }}/displaylink-installer.sh"
+  command: "/usr/local/bin/displaylink-driver-{{ version }}/displaylink-installer.sh"
+  become: true
   
 - name: start upon boot
   systemd:
