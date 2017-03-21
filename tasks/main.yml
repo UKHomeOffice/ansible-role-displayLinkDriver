@@ -20,7 +20,7 @@
   become: true
 
 - name: run driver
-  command: "/usr/local/bin/displaylink-driver-{{ version }}.run --keep"
+  command: "/usr/local/bin/displaylink-driver-{{ version }}.run --keep --install"
   become: true
 
 - name: start upon boot
