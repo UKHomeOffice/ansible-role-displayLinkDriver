@@ -20,7 +20,7 @@
   become: true
 
 - name: run driver
-  command: /usr/local/bin/displaylink-driver-{{ version }}.run --keep --noexec
+  command: "/usr/local/bin/displaylink-driver-{{ version }}.run --keep --noexec"
   become: true
 
 - name: start upon boot
