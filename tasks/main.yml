@@ -19,10 +19,13 @@
     group: root
   become: true
 
-- name: run driver
-  command: "/usr/local/bin/displaylink-driver-{{ version }}.run --keep --install"
+- name: run driver noexec
+  command: "/usr/local/bin/displaylink-driver-{{ version }}.run --keep --noexec"
   become: true
 
+- name: run install script
+  command "/usr/local/bin/displaylink-driver-{{ version }}/displaylink-installer.sh"
+  
 - name: start upon boot
   systemd:
     name: dlm.service
