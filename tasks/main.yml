@@ -28,3 +28,4 @@
     name: dlm.service
     enabled: yes
     state: started
+  become: true
