@@ -19,8 +19,8 @@
     group: root
   become: true
 
-- name: run driver noexec
-  command: "/usr/local/bin/displaylink-driver-{{ version }}.run --keep --quiet"
+- name: run driver install script
+  shell: "/usr/local/bin/displaylink-driver-{{ version }}.run --keep --quiet"
   become: true
   
 - name: start upon boot
