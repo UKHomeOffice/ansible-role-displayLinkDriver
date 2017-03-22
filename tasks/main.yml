@@ -20,7 +20,9 @@
   become: true
 
 - name: run driver install script
-  shell: /usr/local/bin/displaylink-driver-{{ version }}.run --keep --quiet
+  shell: "./displaylink-driver-{{ version }}.run --keep --quiet"
+  args:
+    chdir: /usr/local/bin/
   become: true
   
 - name: start upon boot
