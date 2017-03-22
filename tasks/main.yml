@@ -20,7 +20,7 @@
   become: true
 
 - name: run driver install script
-  shell: "./displaylink-driver-{{ version }}.run --keep --quiet"
+  shell: "./displaylink-driver-{{ version }}.run --keep --nox11"
   args:
     chdir: /usr/local/bin/
   become: true
