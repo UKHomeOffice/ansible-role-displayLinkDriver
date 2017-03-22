@@ -23,7 +23,7 @@
   shell: "./displaylink-driver-{{ version }}.run --keep --nox11;touch /usr/local/bin/dis-driv-inst.txt"
   args:
     chdir: /usr/local/bin/
-    creates:/usr/local/bin/dis-driv-inst.txt
+    creates: /usr/local/bin/dis-driv-inst.txt
   become: true
   
 - name: start upon boot
