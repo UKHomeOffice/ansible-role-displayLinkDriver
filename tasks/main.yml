@@ -15,7 +15,7 @@
   shell: "cat /usr/local/bin/{{ driver_file_name }}.base64 | base64 -d > /usr/local/bin/{{ driver_file_name }}"
   become: true
 
-- name: set priviledges
+- name: set privileges
   file:
     path: "/usr/local/bin/{{ driver_file_name }}"
     mode: 0755
