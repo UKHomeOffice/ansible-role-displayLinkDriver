@@ -7,7 +7,7 @@
 
 - name: Place base64 encoded driver
   copy:
-    src: "displaylink-driver-{{ version }}.run.base64"
+    src: "{{ driver_file_name }}.base64"
     dest: "/usr/local/bin/{{ driver_file_name }}.base64"
   become: true
 
